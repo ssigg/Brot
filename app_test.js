@@ -1,7 +1,7 @@
 "use strict";
 
 describe('brotApp', function () {
-    var $firebaseObject, $utils, $rootScope, scope, $timeout, obj, ref, $interval, log;
+    var $firebaseObject, $rootScope, scope, $timeout, obj, ref;
 
     var DEFAULT_ID = 'id1';
 
@@ -19,18 +19,12 @@ describe('brotApp', function () {
     };
 
     beforeEach(function () {
-        log = {
-            error: []
-        };
-
         module('brotApp');
 
-        inject(function ($controller, _$interval_, _$firebaseObject_, _$timeout_, $firebaseUtils, _$rootScope_, $location) {
+        inject(function ($controller, _$firebaseObject_, _$timeout_, _$rootScope_, $location) {
             $firebaseObject = _$firebaseObject_;
-            $timeout = _$timeout_;
-            $interval = _$interval_;
-            $utils = $firebaseUtils;
             $rootScope = _$rootScope_;
+            $timeout = _$timeout_;
 
             scope = $rootScope.$new();
 
@@ -125,26 +119,5 @@ describe('brotApp', function () {
 
     function stubRef() {
         return new MockFirebase('Mock://').child(DEFAULT_ID);
-    }
-
-    function flushAll() {
-        Array.prototype.slice.call(arguments, 0).forEach(function (o) {
-            angular.isFunction(o.resolve) ? o.resolve() : o.flush();
-        });
-        try {
-            obj.$ref().flush();
-        }
-        catch (e) {
-        }
-        try {
-            $interval.flush(500);
-        }
-        catch (e) {
-        }
-        try {
-            $timeout.flush();
-        }
-        catch (e) {
-        }
     }
 });
