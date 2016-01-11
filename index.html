@@ -1,33 +1,34 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="brotApp">
 <head>
-  <meta charset="utf-8">
-  <title>Brot</title>
+    <meta charset="utf-8">
+    <title>Brot</title>
 
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="viewport" content="width=device-width, minimal-ui, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport"
+          content="width=device-width, minimal-ui, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
-  <link rel="icon" sizes="192x192" href="brot-192.png">
-  <link rel="icon" sizes="128x128" href="brot-128.png">
-  <link rel="apple-touch-icon" sizes="128x128" href="brot-128.png">
-  <link rel="apple-touch-icon-precomposed" sizes="128x128" href="brot-128.png">
+    <link rel="icon" sizes="192x192" href="brot-192.png">
+    <link rel="icon" sizes="128x128" href="brot-128.png">
+    <link rel="apple-touch-icon" sizes="128x128" href="brot-128.png">
+    <link rel="apple-touch-icon-precomposed" sizes="128x128" href="brot-128.png">
 
-  <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="app.css">
 </head>
 <body ng-controller="brotCtrl">
 <div ng-hide="isInEditMode">
-  <h1 ng-repeat="item in data" ng-click="toggle(item)" ng-class="{yes: item.isAvailable, no: !item.isAvailable}">
-    {{item.name}}</h1>
-  <h1 class="action edit" ng-click="edit()">✐</h1>
+    <h1 ng-repeat="item in data" ng-click="toggle(item)" ng-class="{yes: item.isAvailable, no: !item.isAvailable}">
+        {{item.name}}</h1>
+    <h1 class="action edit" ng-click="edit()">✐</h1>
 </div>
 <div ng-show="isInEditMode">
-  <div ng-repeat="item in data" class="input-container">
-    <a class="delete" ng-click="delete(item)">⊗</a>
-    <input type="text" ng-model="item.name">
-  </div>
-  <h1 class="action back" ng-click="back()">☺</h1>
-  <h1 class="action add" ng-click="add()">+</h1>
+    <div ng-repeat="item in data" class="input-container">
+        <a class="delete" ng-click="delete(item)">⊗</a>
+        <input type="text" ng-model="item.name">
+    </div>
+    <h1 class="action back" ng-click="back()">☺</h1>
+    <h1 class="action add" ng-click="add()">+</h1>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
 <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
