@@ -9,12 +9,12 @@ app.factory("firebaseRef", function ($location) {
     return ref;
 })
 
-app.factory("syncObject", function ($location, $firebaseObject, firebaseRef) {
+app.factory("syncObject", function ($firebaseObject, firebaseRef) {
     var syncObject = $firebaseObject(firebaseRef);
     return syncObject;
 });
 
-app.controller("brotCtrl", function ($scope, $location, syncObject, firebaseRef) {
+app.controller("brotCtrl", function ($scope, syncObject, firebaseRef) {
     syncObject.$bindTo($scope, "data");
 
     $scope.isInEditMode = false;
