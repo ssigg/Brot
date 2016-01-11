@@ -5,12 +5,12 @@ body {
 }
 
 h1 {
-    font-weight:normal;
+    font-weight: normal;
     display: inline;
     float: left;
     margin: 0.05em;
     padding: 0.2em;
-    height:1.2em;
+    height: 1.2em;
     cursor: pointer;
 }
 
@@ -24,46 +24,46 @@ h1 {
 
 .action {
     font-style: normal;
-    font-size:2em;
+    font-size: 2em;
     background: deepskyblue;
-    width:1.2em;
-    text-align:center;
+    width: 1.2em;
+    text-align: center;
 }
 
 .action.back {
-    clear:left;
+    clear: left;
 }
 
 div.input-container {
-    margin:0.5em 0;
-    vertical-align:bottom;
-    clear:left;
+    margin: 0.5em 0;
+    vertical-align: bottom;
+    clear: left;
 }
 
 .delete {
     cursor: pointer;
     color: orangered;
-    padding:0 10px 0 0;
+    padding: 0 10px 0 0;
     font-weight: bold;
-    font-size:1.8em;
-    display:block;
-    margin-top:-10px;
-    float:left;
+    font-size: 1.8em;
+    display: block;
+    margin-top: -10px;
+    float: left;
 }
 
 input {
     -webkit-appearance: none;
-    -webkit-border-radius:0;
-    border-radius:0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
     font-family: Georgia;
-    font-size:1.2em;
-    padding:0.1em 0;
-    border:1px solid #ddd;
-    border-width:0 0 1px 0;
-    padding-left:5px;
-    color:#ddd;
-    background:#333;
-    width:80%;
-    display:block;
-    float:left;
+    font-size: 1.2em;
+    padding: 0.1em 0;
+    border: 1px solid #ddd;
+    border-width: 0 0 1px 0;
+    padding-left: 5px;
+    color: #ddd;
+    background: #333;
+    width: 80%;
+    display: block;
+    float: left;
 }
