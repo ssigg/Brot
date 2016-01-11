@@ -21,17 +21,17 @@ describe('brotApp', function () {
     beforeEach(function () {
         module('brotApp');
 
-        inject(function ($controller, _$firebaseObject_, _$timeout_, _$rootScope_, $location) {
+        inject(function (_$firebaseObject_, _$timeout_, _$rootScope_, $controller) {
             $firebaseObject = _$firebaseObject_;
-            $rootScope = _$rootScope_;
             $timeout = _$timeout_;
+            $rootScope = _$rootScope_;
 
             scope = $rootScope.$new();
 
             ref = stubRef();
             obj = makeObject(FIXTURE_DATA, ref);
 
-            $controller('brotCtrl', {$scope: scope, $location: $location, syncObject: obj, firebaseRef: ref});
+            $controller('brotCtrl', {$scope: scope, syncObject: obj, firebaseRef: ref});
             scope.$digest();
         });
     });
