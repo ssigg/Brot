@@ -15,6 +15,11 @@ app.factory("syncObject", function ($firebaseObject, firebaseRef) {
 });
 
 app.controller("brotCtrl", function ($scope, syncObject, firebaseRef) {
+    syncObject.$loaded(function() {
+        angular.element(document.getElementById('loading')).addClass('hide');
+        angular.element(document.getElementById('content')).removeClass('hide');
+    });
+
     syncObject.$bindTo($scope, "data");
 
     $scope.isInEditMode = false;

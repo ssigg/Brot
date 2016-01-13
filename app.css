@@ -4,6 +4,20 @@ body {
     font-size: 1.5em;
 }
 
+.hide {
+    display: none;
+}
+
+#loading {
+    background: #333 url("loading.svg") no-repeat 0 0;
+    width:200px;
+    height:200px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin:-50px 0 0 -50px;
+}
+
 h1 {
     font-weight: normal;
     display: inline;
