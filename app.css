@@ -15,7 +15,7 @@ body {
     position:absolute;
     left:50%;
     top:50%;
-    margin:-100px 0 0 -100px;
+    margin:0;
 }
 
 h1 {
